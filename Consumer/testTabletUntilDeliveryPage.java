@@ -21,7 +21,7 @@ public class testTabletUntilDeliveryPage {
         driver.navigate().to("https://bau-ref-merch00.ref.o2.co.uk:9443/upgrade/store/tablets/");
 
 
-        driver.findElement(By.partialLinkText("Apple iPad Pro")).click();
+        driver.findElement(By.partialLinkText("Sony Xperia Z4")).click();
         driver.manage().deleteAllCookies();
 
         driver.findElement(By.cssSelector("#deviceDetailsSubmit")).click();
