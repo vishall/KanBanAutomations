@@ -5,7 +5,10 @@ repositories {
     mavenCentral()
 }
 
+sourceCompatibility = 1.7
+version = '1.0'
+
 dependencies{
-    testCompile 'org.seleniumhq.selenium:selenium-java:2.52.0'
+    testCompile 'org.seleniumhq.selenium:selenium-java:2.53.0'
     testCompile 'junit:junit:4.12'
 }
