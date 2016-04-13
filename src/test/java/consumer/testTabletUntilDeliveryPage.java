@@ -15,6 +15,7 @@ public class testTabletUntilDeliveryPage {
     @Test
     public void firefoxTabletTest() {
 
+
         WebDriver driver = new FirefoxDriver();
 
         driver.manage().window().maximize();
