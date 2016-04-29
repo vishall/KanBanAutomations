@@ -15,4 +15,7 @@ dependencies{
 
 test {
     useTestNG()
+    afterTest { desc, result ->
+        logger.lifecycle("Executing test ${desc.name} [${desc.className}] with result: ${result.resultType} ${new Date().toString()}")
+    }
 }

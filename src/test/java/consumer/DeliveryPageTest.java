@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 public class DeliveryPageTest extends AbstractTest {
 
     @Test(dataProvider = "withTariffData")
-    public void firefoxPhoneTest(String deviceUrl, String deviceName) {
+    public void firefoxWithTariffTest(String deviceUrl, String deviceName) {
         driver.navigate().to("https://bau-ref-merch00.ref.o2.co.uk:9443/upgrade/store/"+ deviceUrl +"/");
 
         driver.findElement(By.partialLinkText(deviceName)).click();
@@ -27,14 +27,14 @@ public class DeliveryPageTest extends AbstractTest {
     }
 
     @Test(dataProvider = "withoutTariffData")
-    public void firefoxWearablesTest(String deviceUrl, String deviceName) {
+    public void firefoxWithoutTariffTest(String deviceUrl, String deviceName) {
 
         driver.navigate().to("https://bau-ref-merch00.ref.o2.co.uk:9443/upgrade/store/"+ deviceUrl +"/");
 
         driver.findElement(By.partialLinkText(deviceName)).click();
         driver.findElement(By.cssSelector("#deviceDetailsSubmit")).click();
 
-        WebDriverWait wait = new WebDriverWait(driver, 5);
+        WebDriverWait wait = new WebDriverWait(driver,10);
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("[data-qa-gotobasket-link]")));
         driver.findElement(By.cssSelector("[data-qa-gotobasket-link]")).click();
 
@@ -45,9 +45,9 @@ public class DeliveryPageTest extends AbstractTest {
     public static Object[][] withoutTariffData() {
         return new Object[][] {
                 {"smartwatches", "Samsung Gear S2"},
-                {"mobile-broadband", "Huawei 4G In-Car wifi"},
                 {"accessories", "Samsung Galaxy Wireless Charging Plate"},
-                {"fitness-trackers", "Fitbit Blaze"}};
+                {"fitness-trackers", "Fitbit Blaze"}
+        };
     }
 
     @DataProvider(name = "withTariffData")
