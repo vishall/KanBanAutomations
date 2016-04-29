@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
  */
 public class DeliveryPageTest extends AbstractTest {
 
-    @Test(dataProvider = "phonesTabletMbbData")
+    @Test(dataProvider = "withTariffData")
     public void firefoxPhoneTest(String deviceUrl, String deviceName) {
         driver.navigate().to("https://bau-ref-merch00.ref.o2.co.uk:9443/upgrade/store/"+ deviceUrl +"/");
 
@@ -26,7 +26,7 @@ public class DeliveryPageTest extends AbstractTest {
         driver.findElement(By.name("securecheckout")).click();
     }
 
-    @Test(dataProvider = "wearablesData")
+    @Test(dataProvider = "withoutTariffData")
     public void firefoxWearablesTest(String deviceUrl, String deviceName) {
 
         driver.navigate().to("https://bau-ref-merch00.ref.o2.co.uk:9443/upgrade/store/"+ deviceUrl +"/");
@@ -41,8 +41,8 @@ public class DeliveryPageTest extends AbstractTest {
         driver.findElement(By.name("securecheckout")).click();
     }
 
-    @DataProvider(name = "wearablesData")
-    public static Object[][] wearablesData() {
+    @DataProvider(name = "withoutTariffData")
+    public static Object[][] withoutTariffData() {
         return new Object[][] {
                 {"smartwatches", "Samsung Gear S2"},
                 {"mobile-broadband", "Huawei 4G In-Car wifi"},
@@ -50,8 +50,8 @@ public class DeliveryPageTest extends AbstractTest {
                 {"fitness-trackers", "Fitbit Blaze"}};
     }
 
-    @DataProvider(name = "phonesTabletMbbData")
-    public static Object[][] phonesTabletMbbData() {
+    @DataProvider(name = "withTariffData")
+    public static Object[][] withTariffData() {
         return new Object[][] {
                 {"phones", "Apple iPhone 6"},
                 {"mobile-broadband", "Huawei 4G In-Car wifi"},
