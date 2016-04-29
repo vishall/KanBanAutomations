@@ -35,7 +35,7 @@ public class testTabletUntilDeliveryPage {
 
         driver.findElement(By.cssSelector("#header > div:nth-of-type(2) > div:nth-of-type(1) > div > button")).click();
 
-        driver.findElement(By.cssSelector("#shopApp > div:nth-of-type(2) > div > div > div:nth-of-type(1) > div:nth-of-type(1) > div > form > input")).click();
+        driver.findElement(By.name("securecheckout")).click();
     }
 
     @After
