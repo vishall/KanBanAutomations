@@ -37,7 +37,7 @@ public class ConsumerDeliveryPageTest extends AbstractTest {
         driver.findElement(By.partialLinkText(deviceName)).click();
         driver.findElement(By.cssSelector("#deviceDetailsSubmit")).click();
 
-        WebDriverWait wait = new WebDriverWait(driver,10);
+        WebDriverWait wait = new WebDriverWait(driver,15);
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("[data-qa-gotobasket-link]")));
         driver.findElement(By.cssSelector("[data-qa-gotobasket-link]")).click();
 
