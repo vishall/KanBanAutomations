@@ -5,11 +5,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import org.testng.asserts.Assertion;
 
 /**
  * Created by user on 01/03/16.
  */
-public class DeliveryPageTest extends AbstractTest {
+public class ConsumerDeliveryPageTest extends AbstractTest {
 
     @Test(dataProvider = "withTariffData")
     public void firefoxWithTariffTest(String deviceUrl, String deviceName) {
@@ -24,6 +25,8 @@ public class DeliveryPageTest extends AbstractTest {
 
         driver.findElement(By.cssSelector("#header > div:nth-of-type(2) > div:nth-of-type(1) > div > button")).click();
         driver.findElement(By.name("securecheckout")).click();
+        Assertion assertion = new Assertion();
+        assertion.assertEquals(driver.getTitle(), "O2 | Delivery");
     }
 
     @Test(dataProvider = "withoutTariffData")
@@ -39,6 +42,8 @@ public class DeliveryPageTest extends AbstractTest {
         driver.findElement(By.cssSelector("[data-qa-gotobasket-link]")).click();
 
         driver.findElement(By.name("securecheckout")).click();
+        Assertion assertion = new Assertion();
+        assertion.assertEquals(driver.getTitle(), "O2 | Delivery");
     }
 
     @DataProvider(name = "withoutTariffData")

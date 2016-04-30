@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
  */
 public abstract class AbstractTest {
 
-    static WebDriver driver;
+    protected static WebDriver driver;
 
     @BeforeClass
     public static void setUp() throws Exception {
