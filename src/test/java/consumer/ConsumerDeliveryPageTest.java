@@ -12,7 +12,7 @@ import org.testng.asserts.Assertion;
  */
 public class ConsumerDeliveryPageTest extends AbstractTest {
 
-    @Test(dataProvider = "withTariffData")
+    @Test(dataProvider = "ConnectedDevices")
     public void firefoxWithTariffTest(String deviceUrl, String deviceName) {
         driver.navigate().to("https://bau-ref-merch00.ref.o2.co.uk:9443/upgrade/store/"+ deviceUrl +"/");
 
@@ -29,7 +29,7 @@ public class ConsumerDeliveryPageTest extends AbstractTest {
         assertion.assertEquals(driver.getTitle(), "O2 | Delivery");
     }
 
-    @Test(dataProvider = "withoutTariffData")
+    @Test(dataProvider = "NonConnectedDevices")
     public void firefoxWithoutTariffTest(String deviceUrl, String deviceName) {
 
         driver.navigate().to("https://bau-ref-merch00.ref.o2.co.uk:9443/upgrade/store/"+ deviceUrl +"/");
@@ -46,17 +46,42 @@ public class ConsumerDeliveryPageTest extends AbstractTest {
         assertion.assertEquals(driver.getTitle(), "O2 | Delivery");
     }
 
-    @DataProvider(name = "withoutTariffData")
-    public static Object[][] withoutTariffData() {
+    @Test(dataProvider = "AccessoriesData")
+    public void firefoxAccessoriesTest(String deviceUrl, String deviceName) {
+
+        driver.navigate().to("https://bau-ref-merch00.ref.o2.co.uk:9443/upgrade/store/"+ deviceUrl +"/");
+
+        driver.findElement(By.partialLinkText(deviceName)).click();
+        driver.findElement(By.cssSelector("#deviceDetailsSubmit")).click();
+
+        WebDriverWait wait = new WebDriverWait(driver,15);
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("[data-qa-gotobasket-link]")));
+        driver.findElement(By.cssSelector("[data-qa-gotobasket-link]")).click();
+
+        driver.findElement(By.name("securecheckout")).click();
+        Assertion assertion = new Assertion();
+        assertion.assertEquals(driver.getTitle(), "O2 | Delivery");
+    }
+
+    @DataProvider(name = "NonConnectedDevices")
+    public static Object[][] NonConnectedDevices() {
         return new Object[][] {
                 {"smartwatches", "Samsung Gear S2"},
-                {"accessories", "Samsung Galaxy Wireless Charging Plate"},
                 {"fitness-trackers", "Fitbit Blaze"}
         };
     }
 
-    @DataProvider(name = "withTariffData")
-    public static Object[][] withTariffData() {
+    @DataProvider(name = "AccessoriesData")
+    public static Object[][] AccessoriesData() {
+        return new Object[][] {
+
+                {"accessories", "Samsung Galaxy Wireless Charging Plate"},
+
+        };
+    }
+
+    @DataProvider(name = "ConnectedDevices")
+    public static Object[][] ConnectedDevices() {
         return new Object[][] {
                 {"phones", "Apple iPhone 6"},
                 {"mobile-broadband", "Huawei 4G In-Car wifi"},
