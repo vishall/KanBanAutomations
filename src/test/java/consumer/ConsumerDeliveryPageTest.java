@@ -43,6 +43,7 @@ public class ConsumerDeliveryPageTest extends AbstractTest {
 
         driver.findElement(By.name("securecheckout")).click();
         Assertion assertion = new Assertion();
+        wait.until(ExpectedConditions.titleIs(driver.getTitle()));
         assertion.assertEquals(driver.getTitle(), "O2 | Delivery");
     }
 
@@ -60,6 +61,7 @@ public class ConsumerDeliveryPageTest extends AbstractTest {
 
         driver.findElement(By.name("securecheckout")).click();
         Assertion assertion = new Assertion();
+        wait.until(ExpectedConditions.titleIs(driver.getTitle()));
         assertion.assertEquals(driver.getTitle(), "O2 | Delivery");
     }
 
