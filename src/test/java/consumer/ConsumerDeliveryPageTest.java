@@ -7,6 +7,8 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.Assertion;
 
+import static org.testng.Assert.assertEquals;
+
 /**
  * Created by user on 01/03/16.
  */
@@ -18,17 +20,18 @@ public class ConsumerDeliveryPageTest extends AbstractTest {
         driver.navigate().to("https://bau-ref-merch00.ref.o2.co.uk:9443/upgrade/store/"+ deviceUrl +"/");
 
         driver.findElement(By.partialLinkText(deviceName)).click();
-        driver.manage().deleteAllCookies();
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#deviceDetailsSubmit")));
 
         driver.findElement(By.cssSelector("#deviceDetailsSubmit")).click();
-        driver.manage().deleteAllCookies();
+
         driver.findElement(By.cssSelector("#callToAction")).click();
 
         driver.findElement(By.cssSelector("#header > div:nth-of-type(2) > div:nth-of-type(1) > div > button")).click();
         driver.findElement(By.name("securecheckout")).click();
-        Assertion assertion = new Assertion();
         wait.until(ExpectedConditions.titleIs(driver.getTitle()));
-        assertion.assertEquals(driver.getTitle(), "O2 | Delivery");
+
+        assertEquals(driver.getTitle(), "O2 | Delivery");
     }
 
     @Test(dataProvider = "NonConnectedDevices")
@@ -37,16 +40,17 @@ public class ConsumerDeliveryPageTest extends AbstractTest {
         driver.navigate().to("https://bau-ref-merch00.ref.o2.co.uk:9443/upgrade/store/"+ deviceUrl +"/");
 
         driver.findElement(By.partialLinkText(deviceName)).click();
-        driver.findElement(By.cssSelector("#deviceDetailsSubmit")).click();
 
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#deviceDetailsSubmit")));
+        driver.findElement(By.cssSelector("#deviceDetailsSubmit")).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("[data-qa-gotobasket-link]")));
         driver.findElement(By.cssSelector("[data-qa-gotobasket-link]")).click();
 
         driver.findElement(By.name("securecheckout")).click();
-        Assertion assertion = new Assertion();
         wait.until(ExpectedConditions.titleIs(driver.getTitle()));
-        assertion.assertEquals(driver.getTitle(), "O2 | Delivery");
+
+        assertEquals(driver.getTitle(), "O2 | Delivery");
     }
 
     @Test(dataProvider = "AccessoriesData")
@@ -55,6 +59,8 @@ public class ConsumerDeliveryPageTest extends AbstractTest {
         driver.navigate().to("https://bau-ref-merch00.ref.o2.co.uk:9443/upgrade/store/"+ deviceUrl +"/");
 
         driver.findElement(By.partialLinkText(deviceName)).click();
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#deviceDetailsSubmit")));
         driver.findElement(By.cssSelector("#deviceDetailsSubmit")).click();
 
         WebDriverWait wait = new WebDriverWait(driver,15);
