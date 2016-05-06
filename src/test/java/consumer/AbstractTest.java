@@ -2,6 +2,7 @@ package consumer;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -15,12 +16,15 @@ public abstract class AbstractTest {
 
     protected static WebDriver driver;
 
+    protected static WebDriverWait wait;
+
     @BeforeClass
     public static void setUp() throws Exception {
 
         driver = new FirefoxDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(9, TimeUnit.SECONDS);
+        wait  = new WebDriverWait(driver,15);
     }
 
     @BeforeMethod

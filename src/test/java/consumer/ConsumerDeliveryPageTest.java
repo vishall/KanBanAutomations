@@ -14,7 +14,6 @@ import static org.testng.Assert.assertEquals;
  */
 public class ConsumerDeliveryPageTest extends AbstractTest {
 
-    WebDriverWait wait = new WebDriverWait(driver,15);
     @Test(dataProvider = "ConnectedDevices")
     public void firefoxWithTariffTest(String deviceUrl, String deviceName) {
         driver.navigate().to("https://bau-ref-merch00.ref.o2.co.uk:9443/upgrade/store/"+ deviceUrl +"/");
