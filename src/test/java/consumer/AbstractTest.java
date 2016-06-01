@@ -24,7 +24,7 @@ public abstract class AbstractTest {
         driver = new FirefoxDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(9, TimeUnit.SECONDS);
-        wait  = new WebDriverWait(driver,15);
+        wait  = new WebDriverWait(driver,16);
     }
 
     @BeforeMethod
