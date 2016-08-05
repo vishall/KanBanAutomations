@@ -16,7 +16,7 @@ public class ConsumerDeliveryPageTest extends AbstractTest {
 
     @Test(dataProvider = "ConnectedDevices")
     public void firefoxWithTariffTest(String deviceUrl, String deviceName) {
-        driver.navigate().to("https://bau-ref-merch00.ref.o2.co.uk:9445/upgrade/store/"+ deviceUrl +"/");
+        driver.navigate().to("https://bau-ref-merch00.ref.o2.co.uk:9444/upgrade/store/"+ deviceUrl +"/");
 
         driver.findElement(By.partialLinkText(deviceName)).click();
 
@@ -36,7 +36,7 @@ public class ConsumerDeliveryPageTest extends AbstractTest {
     @Test(dataProvider = "NonConnectedDevices")
     public void firefoxWithoutTariffTest(String deviceUrl, String deviceName) {
 
-        driver.navigate().to("https://bau-ref-merch00.ref.o2.co.uk:9445/upgrade/store/"+ deviceUrl +"/");
+        driver.navigate().to("https://bau-ref-merch00.ref.o2.co.uk:9444/upgrade/store/"+ deviceUrl +"/");
 
         driver.findElement(By.partialLinkText(deviceName)).click();
 
@@ -55,7 +55,7 @@ public class ConsumerDeliveryPageTest extends AbstractTest {
     @Test(dataProvider = "AccessoriesData")
     public void firefoxAccessoriesTest(String deviceUrl, String deviceName) {
 
-        driver.navigate().to("https://bau-ref-merch00.ref.o2.co.uk:9445/upgrade/store/"+ deviceUrl +"/");
+        driver.navigate().to("https://bau-ref-merch00.ref.o2.co.uk:9444/upgrade/store/"+ deviceUrl +"/");
 
         driver.findElement(By.partialLinkText(deviceName)).click();
 
