@@ -9,7 +9,7 @@ sourceCompatibility = 1.7
 version = '1.0'
 
 dependencies{
-    testCompile 'org.seleniumhq.selenium:selenium-java:2.53.0'
+    testCompile 'org.seleniumhq.selenium:selenium-java:2.53.1'
     testCompile 'org.testng:testng:6.9.9'
     testCompile 'com.google.guava:guava:11.0.1'
 }
