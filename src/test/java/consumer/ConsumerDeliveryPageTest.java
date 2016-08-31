@@ -76,7 +76,7 @@ public class ConsumerDeliveryPageTest extends AbstractTest {
     public static Object[][] NonConnectedDevices() {
         return new Object[][] {
                 {"smartwatches", "Samsung Gear S2"},
-                {"fitness-trackers", "Fitbit Blaze"}
+                {"fitness-trackers", "Garmin vivosmart HR"}
         };
     }
 
