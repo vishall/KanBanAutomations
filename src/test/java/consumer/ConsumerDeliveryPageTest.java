@@ -84,7 +84,7 @@ public class ConsumerDeliveryPageTest extends AbstractTest {
     public static Object[][] AccessoriesData() {
         return new Object[][] {
 
-                {"accessories/all", "Samsung Galaxy Wireless Charging Plate"},
+                {"accessories/all", "Juice Lightning Car Charger"},
 
         };
     }
