@@ -92,7 +92,7 @@ public class ConsumerDeliveryPageTest extends AbstractTest {
     @DataProvider(name = "ConnectedDevices")
     public static Object[][] ConnectedDevices() {
         return new Object[][] {
-                {"phones", "Apple iPhone 6"},
+                {"phones", "Samsung Galaxy S7"},
                 {"mobile-broadband", "Huawei 4G In-Car wifi"},
                 {"tablets", "Sony Xperia Z4"},
         };
