@@ -84,7 +84,7 @@ public class ConsumerDeliveryPageTest extends AbstractTest {
     public static Object[][] AccessoriesData() {
         return new Object[][] {
 
-                {"accessories/all", "Juice Lightning Car Charger"},
+                {"accessories/all", "Harman Kardon Onyx Mini"},
 
         };
     }
