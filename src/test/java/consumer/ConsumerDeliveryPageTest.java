@@ -94,7 +94,7 @@ public class ConsumerDeliveryPageTest extends AbstractTest {
         return new Object[][] {
                 {"phones", "Samsung Galaxy S7"},
                 {"mobile-broadband", "Huawei 4G In-Car wifi"},
-                {"tablets", "Alcatel Family Tablet Bundle"},
+                {"tablets", "Alcatel Plus 10"},
         };
     }
 }
