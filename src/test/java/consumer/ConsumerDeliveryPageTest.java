@@ -57,6 +57,8 @@ public class ConsumerDeliveryPageTest extends AbstractTest {
 
         driver.navigate().to("https://bau-ref-merch00.ref.o2.co.uk:9444/upgrade/store/"+ deviceUrl +"/");
 
+        driver.findElement(By.className("page-all")).click();
+
         driver.findElement(By.partialLinkText(deviceName)).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#deviceDetailsSubmit")));
