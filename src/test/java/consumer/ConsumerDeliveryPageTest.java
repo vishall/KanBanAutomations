@@ -18,6 +18,8 @@ public class ConsumerDeliveryPageTest extends AbstractTest {
     public void firefoxWithTariffTest(String deviceUrl, String deviceName) {
         driver.navigate().to("https://bau-ref-merch00.ref.o2.co.uk:9444/upgrade/store/"+ deviceUrl +"/");
 
+        driver.findElement(By.className("page-all")).click();
+
         driver.findElement(By.partialLinkText(deviceName)).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#deviceDetailsSubmit")));
@@ -94,7 +96,7 @@ public class ConsumerDeliveryPageTest extends AbstractTest {
     @DataProvider(name = "ConnectedDevices")
     public static Object[][] ConnectedDevices() {
         return new Object[][] {
-                {"phones", "Samsung Galaxy S7"},
+                {"phones", "Huawei P9 Plus"},
                 {"mobile-broadband", "Huawei 4G In-Car wifi"},
                 {"tablets", "Alcatel Plus 10"},
         };
