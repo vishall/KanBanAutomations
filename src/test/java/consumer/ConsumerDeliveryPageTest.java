@@ -99,7 +99,7 @@ public class ConsumerDeliveryPageTest extends AbstractTest {
     public static Object[][] ConnectedDevices() {
         return new Object[][] {
                 {"phones", "Huawei P9 Plus"},
-                {"mobile-broadband", "Huawei 4G In-Car wifi"},
+                {"mobile-broadband", "Huawei 4G Dongle with wifi"},
                 {"tablets", "Alcatel Plus 10"},
         };
     }
