@@ -84,7 +84,7 @@ public class ConsumerDeliveryPageTest extends AbstractTest {
     public static Object[][] AccessoriesData() {
         return new Object[][] {
 
-                {"accessories/all#brand=harman-kardon", "Harman Kardon Onyx Mini"},
+                {"accessories/all", "Harman Kardon Onyx Mini"},
 
         };
     }
@@ -92,7 +92,7 @@ public class ConsumerDeliveryPageTest extends AbstractTest {
     @DataProvider(name = "ConnectedDevices")
     public static Object[][] ConnectedDevices() {
         return new Object[][] {
-                {"phones#brand=samsung", "Samsung Galaxy S7"},
+                {"phones", "Samsung Galaxy S7"},
                 {"mobile-broadband", "Huawei 4G In-Car wifi"},
                 {"tablets", "Alcatel Plus 10"},
         };
