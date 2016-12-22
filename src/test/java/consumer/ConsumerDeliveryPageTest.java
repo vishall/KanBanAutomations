@@ -35,26 +35,26 @@ public class ConsumerDeliveryPageTest extends AbstractTest {
         assertEquals(driver.getTitle(), "O2 | Delivery");
     }
 
-    @Test(dataProvider = "NonConnectedDevices")
-    public void firefoxWithoutTariffTest(String deviceUrl, String deviceName) {
-
-        driver.navigate().to("https://bau-ref-merch00.ref.o2.co.uk:9444/upgrade/store/"+ deviceUrl +"/");
-
-        driver.findElement(By.className("page-all")).click();
-
-        driver.findElement(By.partialLinkText(deviceName)).click();
-
-        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#deviceDetailsSubmit")));
-        driver.findElement(By.cssSelector("#deviceDetailsSubmit")).click();
-
-        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("[data-qa-gotobasket-link]")));
-        driver.findElement(By.cssSelector("[data-qa-gotobasket-link]")).click();
-
-        driver.findElement(By.name("securecheckout")).click();
-        wait.until(ExpectedConditions.titleIs(driver.getTitle()));
-
-        assertEquals(driver.getTitle(), "O2 | Delivery");
-    }
+//    @Test(dataProvider = "NonConnectedDevices")
+//    public void firefoxWithoutTariffTest(String deviceUrl, String deviceName) {
+//
+//        driver.navigate().to("https://bau-ref-merch00.ref.o2.co.uk:9444/upgrade/store/"+ deviceUrl +"/");
+//
+//        driver.findElement(By.className("page-all")).click();
+//
+//        driver.findElement(By.partialLinkText(deviceName)).click();
+//
+//        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#deviceDetailsSubmit")));
+//        driver.findElement(By.cssSelector("#deviceDetailsSubmit")).click();
+//
+//        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("[data-qa-gotobasket-link]")));
+//        driver.findElement(By.cssSelector("[data-qa-gotobasket-link]")).click();
+//
+//        driver.findElement(By.name("securecheckout")).click();
+//        wait.until(ExpectedConditions.titleIs(driver.getTitle()));
+//
+//        assertEquals(driver.getTitle(), "O2 | Delivery");
+//    }
 
     @Test(dataProvider = "AccessoriesData")
     public void firefoxAccessoriesTest(String deviceUrl, String deviceName) {
@@ -79,13 +79,13 @@ public class ConsumerDeliveryPageTest extends AbstractTest {
         assertion.assertEquals(driver.getTitle(), "O2 | Delivery");
     }
 
-    @DataProvider(name = "NonConnectedDevices")
-    public static Object[][] NonConnectedDevices() {
-        return new Object[][] {
-                {"smartwatches", "Samsung Gear VR Black"}
-              //  {"fitness-trackers", "Garmin vivosmart HR"}
-        };
-    }
+//    @DataProvider(name = "NonConnectedDevices")
+//    public static Object[][] NonConnectedDevices() {
+//        return new Object[][] {
+//                {"smartwatches", "Samsung Gear VR Black"}
+//              //  {"fitness-trackers", "Garmin vivosmart HR"}
+//        };
+//    }
 
     @DataProvider(name = "AccessoriesData")
     public static Object[][] AccessoriesData() {
