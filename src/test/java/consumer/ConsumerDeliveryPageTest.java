@@ -18,6 +18,7 @@ public class ConsumerDeliveryPageTest extends AbstractTest {
     public void firefoxWithTariffTest(String deviceUrl, String deviceName) {
         driver.navigate().to("https://bau-ref-merch00.ref.o2.co.uk:9444/upgrade/store/"+ deviceUrl +"/");
 
+        if(!(deviceUrl == "mobile-broadband"))
         driver.findElement(By.className("page-all")).click();
 
         driver.findElement(By.partialLinkText(deviceName)).click();
