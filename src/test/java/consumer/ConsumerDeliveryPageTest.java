@@ -63,7 +63,8 @@ public class ConsumerDeliveryPageTest extends AbstractTest {
 
         driver.findElement(By.className("page-all")).click();
 
-        driver.findElement(By.partialLinkText(deviceName)).click();
+        driver.findElement(By.id("search")).sendKeys(deviceName);
+       // driver.findElement(By.partialLinkText(deviceName)).click();
 
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#deviceDetailsSubmit")));
         driver.findElement(By.cssSelector("#deviceDetailsSubmit")).click();
