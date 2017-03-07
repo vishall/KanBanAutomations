@@ -29,6 +29,8 @@ public class ConsumerDeliveryPageTest extends AbstractTest {
 
         driver.findElement(By.cssSelector("#callToAction")).click();
 
+        WebDriverWait wait = new WebDriverWait(driver,15);
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("[qa-proceed-to-basket-dock-header]")));
         driver.findElement(By.cssSelector("[qa-proceed-to-basket-dock-header]")).click();
         driver.findElement(By.name("securecheckout")).click();
         wait.until(ExpectedConditions.titleIs(driver.getTitle()));
