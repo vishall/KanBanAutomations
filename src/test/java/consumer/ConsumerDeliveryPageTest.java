@@ -29,7 +29,7 @@ public class ConsumerDeliveryPageTest extends AbstractTest {
 
         driver.findElement(By.cssSelector("#callToAction")).click();
 
-        driver.findElement(By.cssSelector("#header > div:nth-of-type(2) > div:nth-of-type(1) > div > button")).click();
+        //driver.findElement(By.cssSelector("#header > div:nth-of-type(2) > div:nth-of-type(1) > div > button")).click();
         driver.findElement(By.name("securecheckout")).click();
         wait.until(ExpectedConditions.titleIs(driver.getTitle()));
 
