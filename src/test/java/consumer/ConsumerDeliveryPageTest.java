@@ -102,7 +102,7 @@ public class ConsumerDeliveryPageTest extends AbstractTest {
     @DataProvider(name = "ConnectedDevices")
     public static Object[][] ConnectedDevices() {
         return new Object[][] {
-                {"phones", "Samsung Galaxy S7"},
+                {"phones", "Samsung Galaxy S8"},
                 {"mobile-broadband", "Huawei 4G Pocket Hotspot Plus"},
                 {"tablets", "Alcatel Plus 10"},
         };
