@@ -94,7 +94,7 @@ public class ConsumerDeliveryPageTest extends AbstractTest {
     public static Object[][] AccessoriesData() {
         return new Object[][] {
 
-                {"accessories/all", "Harman Kardon Onyx Mini"},
+                {"accessories/all", "Samsung Original Convertible Wireless Charger Black"},
 
         };
     }
