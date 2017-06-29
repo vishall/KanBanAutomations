@@ -72,9 +72,9 @@ public class ConsumerDeliveryPageTest extends AbstractTest {
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#deviceDetailsSubmit")));
         driver.findElement(By.cssSelector("#deviceDetailsSubmit")).click();
 
-        WebDriverWait wait = new WebDriverWait(driver,15);
-        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("[data-qa-gotobasket-link]")));
-        driver.findElement(By.cssSelector("[data-qa-gotobasket-link]")).click();
+//        WebDriverWait wait = new WebDriverWait(driver,15);
+//        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("[data-qa-gotobasket-link]")));
+//        driver.findElement(By.cssSelector("[data-qa-gotobasket-link]")).click();
 
         driver.findElement(By.name("securecheckout")).click();
         Assertion assertion = new Assertion();
