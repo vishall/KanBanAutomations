@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="1a8a2e09-babc-4177-828a-a9675fac94c6" xsi:noNamespaceSchemaLocation="http://www.jetbrains.com/teamcity/schemas/10.0/project-config.xsd">
+  <name>ProductCatalogueData Master</name>
+  <parameters />
+  <project-extensions>
+    <extension id="PROJECT_EXT_3" type="ReportTab">
+      <parameters>
+        <param name="buildTypeId" value="ProductCatalogueDataMaster_Build" />
+        <param name="revisionRuleName" value="lastSuccessful" />
+        <param name="revisionRuleRevision" value="latest.lastSuccessful" />
+        <param name="startPage" value="index.html" />
+        <param name="title" value="Report" />
+        <param name="type" value="ProjectReportTab" />
+      </parameters>
+    </extension>
+    <extension id="PROJECT_EXT_4" type="IssueTracker">
+      <parameters>
+        <param name="host" value="https://devo2.dev.o2.co.uk/jirawidget/" />
+        <param name="idPrefix" value="BAU" />
+        <param name="name" value="kanban" />
+        <param name="secure:password" value="credentialsJSON:defcbbb3-5f8d-49ad-893b-1f2e3ca302df" />
+        <param name="type" value="jira" />
+        <param name="username" value="lokev" />
+      </parameters>
+    </extension>
+    <extension id="PROJECT_EXT_5" type="versionedSettings">
+      <parameters>
+        <param name="buildSettings" value="ALWAYS_USE_CURRENT" />
+        <param name="credentialsStorageType" value="credentialsJSON" />
+        <param name="enabled" value="true" />
+        <param name="rootId" value="automation" />
+        <param name="showChanges" value="false" />
+      </parameters>
+    </extension>
+  </project-extensions>
+  <cleanup />
+</project>
+
