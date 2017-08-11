@@ -27,6 +27,7 @@ public class ConsumerDeliveryPageTest extends AbstractTest {
 
         driver.findElement(By.cssSelector("#deviceDetailsSubmit")).click();
 
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("[data-qa-simo-tariff-buynow]")));
         driver.findElement(By.cssSelector("[data-qa-simo-tariff-buynow]")).click();
 
         WebDriverWait wait = new WebDriverWait(driver,15);
@@ -102,7 +103,7 @@ public class ConsumerDeliveryPageTest extends AbstractTest {
     @DataProvider(name = "ConnectedDevices")
     public static Object[][] ConnectedDevices() {
         return new Object[][] {
-                {"phones", "Samsung Galaxy S8"},
+                {"phones", "Samsung Galaxy S8 Plus"},
                 {"mobile-broadband", "Huawei 4G Pocket Hotspot Plus"},
                 {"tablets", "Alcatel Plus 10"},
         };
