@@ -3,7 +3,9 @@ package consumer;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -25,7 +27,14 @@ public abstract class AbstractTest {
     @BeforeClass
     public static void setUp() throws Exception {
 
-        driver = new FirefoxDriver();
+        System.setProperty("webdriver.gecko.driver","/home/cts1/Downloads/gecko/geckodriver");
+
+        FirefoxProfile profile = new FirefoxProfile();
+        profile.setAcceptUntrustedCertificates(true);
+        DesiredCapabilities caps = DesiredCapabilities.firefox();
+        caps.setCapability(FirefoxDriver.PROFILE,profile);
+
+        driver = new FirefoxDriver(caps);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(9, TimeUnit.SECONDS);
         wait  = new WebDriverWait(driver,16);
