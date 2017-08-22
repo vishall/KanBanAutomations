@@ -1,6 +1,7 @@
 package consumer;
 
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
@@ -27,12 +28,14 @@ public abstract class AbstractTest {
     @BeforeClass
     public static void setUp() throws Exception {
 
-        System.setProperty("webdriver.gecko.driver","/home/cts1/Downloads/gecko/geckodriver");
+        System.setProperty("webdriver.gecko.driver","driver/geckodriver");
 
         FirefoxProfile profile = new FirefoxProfile();
         profile.setAcceptUntrustedCertificates(true);
+        profile.setAssumeUntrustedCertificateIssuer(true);
         DesiredCapabilities caps = DesiredCapabilities.firefox();
         caps.setCapability(FirefoxDriver.PROFILE,profile);
+
 
         driver = new FirefoxDriver(caps);
         driver.manage().window().maximize();
